@@ -6,7 +6,7 @@ https://phpapi.org
 
 https://phpapi.org/ncov2/
 
-JSON API data with date (m-d-Y) input: https://phpapi.org/ncov2/api.php?date=**03-05-2020**
+JSON API data with date (m-d-Y) input: https://phpapi.org/ncov2/api.php?date=03-05-2020
 
 
 ```
