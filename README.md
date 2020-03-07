@@ -12,4 +12,4 @@ The aim of [PHPAPI.org](https://phpapi.org) is to provide a public, free and sim
 
 ## Projects
 
-- [ncov2](https://github.com/fabriziosalmi/phpapi/blob/master/ncov2/README.md): confirmed cases, deaths and ratio for the COVID19 disease. [[PHPAPI.org/ncov/](https://phpapi.org/ncov2/)]
+- [ncov2](https://github.com/fabriziosalmi/phpapi/blob/master/ncov2/README.md): confirmed cases, deaths and ratio for the COVID19 disease. [[PHPAPI.org/ncov2/](https://phpapi.org/ncov2/)]
