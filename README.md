@@ -6,7 +6,9 @@ https://phpapi.org
 
 https://phpapi.org/ncov2/
 
-JSON API data with date (m-d-Y) input: https://phpapi.org/ncov2/api.php?date=03-05-2020
+Covid19 data in JSON format. Date parameter is required (m-d-Y format).
+
+Example: https://phpapi.org/ncov2/api.php?date=03-05-2020
 
 
 ```
