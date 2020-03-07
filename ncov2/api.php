@@ -15,14 +15,14 @@ foreach($csv as $row) {
    	}
 }
 
-$fatality=($dsum*100)/$sum;
+$ratio=($dsum*100)/$sum;
 
 // JSON API
 $json = array(
     "date" => $_GET["date"],
     "confirmed" => $sum,
     "deaths" => $dsum,
-    "fatality" => round($fatality, 3)
+    "fatality" => round($ratio, 3)
     );
 
 // JSON OUTPUT
