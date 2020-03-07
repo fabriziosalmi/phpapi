@@ -1,23 +1,30 @@
 <html>
- <head>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="https://phpapi.org/css/phpapi.css">
- </head>
-  <body>
-   <div class="logo">
-    <img src="https://phpapi.org/img/phpapi.org.png">
-   </div>
+
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="https://phpapi.org/css/phpapi.css">
+</head>
+
+<body>
+    <div class="logo">
+        <img src="https://phpapi.org/img/phpapi.org.png">
+    </div>
     <h1>ncov2 API</h1>
+    <h2>Description</h2>
+    <p>Retrieve confirmed cases, deaths and ratio for COVD19 disease (data source: https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports</p>
     <h2>How to use</h2>
-     <a href="https://phpapi.org/ncov2/api.php?date=mm-dd-YYYY">https://phpapi.org/ncov2/php.api?date=<b>mm-dd-YYYY</b></a><p>
-     <p>Time range: from 01-22-2020 to yesterday (required)</p>
-     <h2>Example</h2>
-     <h3>Input</h3>
-       <a href="https://phpapi.org/ncov2/api.php?date=03-05-2020">https://phpapi.org/ncov2/php.api?date=<b>03-05-2020</b></a><p>
-     <h3>Output</h3>
-     <pre>{"date": "03-05-2020","confirmed": 97886,"deaths": 3349,"fatality": 3.42}</pre>
-  </body>
+    <a href="https://phpapi.org/ncov2/api.php?date=mm-dd-YYYY">https://phpapi.org/ncov2/php.api?date=<b>mm-dd-YYYY</b></a>
+    <p>
+        <p>Time range: from 01-22-2020 to yesterday (required)</p>
+        <h3>Example</h3>
+        <h4>Input</h4>
+        <a href="https://phpapi.org/ncov2/api.php?date=03-05-2020">https://phpapi.org/ncov2/php.api?date=<b>03-05-2020</b></a>
+        <p>
+            <h4>Output</h4>
+            <pre>{"date": "03-05-2020","confirmed": 97886,"deaths": 3349,"fatality": 3.42}</pre>
+</body>
+
 </html>
