@@ -1,7 +1,9 @@
 body {
+  margin: 0 auto;
   background: #1d5bf7;
   color: white;
   font-family: verdana;
+  font-size: large;
 }
 
 a {
