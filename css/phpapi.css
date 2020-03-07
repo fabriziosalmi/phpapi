@@ -1,15 +1,13 @@
 body {
   background: rgb(29, 91, 247);
+  color: white;
+  font-family: verdana;
+}
+
+a {
+  color: yellow;
 }
 
 .logo {
-  background-image: url("https://phpapi.org/img/phpapi.org.png"); /* The image used */
-  background-color: rgb(29, 91, 247); /* Used if the image is unavailable */
-  height: 399px; /* You must set a specified height */
-  width: 180px;
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-}
-
-.class {
+  text-align: center;
 }
