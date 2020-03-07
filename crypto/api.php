@@ -24,12 +24,12 @@ $json = array(
 // NO CACHE
 header('Cache-Control: no-cache, no-store, must-revalidate');
 header('Pragma: no-cache');
-header('Expires: 0');
+header('Expires: 300');
 
 // JSON OUTPUT
 header('data-api: https://phpapi.org/crypto/');
 header('data-format: json');
-header('data-source: https://p.nomics.com/cryptocurrency-bitcoin-api');
+header('data-source: https://api.nomics.com');
 header('Content-Type: application/json');
 echo json_encode($json);
 
