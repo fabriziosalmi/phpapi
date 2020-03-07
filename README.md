@@ -10,7 +10,7 @@ The aim of [PHPAPI.org](https://phpapi.org) is to provide a public, free and sim
 - no account required
 - modern: JSON format is widely used
 - open: use any method to retrieve data
-- CDN and WAF powered: faster and more secure
+- CDN + WAF powered: realiable, fast and secure
 
 ## Projects
 
