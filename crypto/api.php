@@ -22,9 +22,7 @@ $json = array(
 );
 
 // NO CACHE
-header('Cache-Control: no-cache, no-store, must-revalidate');
-header('Pragma: no-cache');
-header('Expires: 300');
+header('Expires: '.gmdate('D, d M Y H:i:s \G\M\T', time() + 60)); // 1 minute
 
 // JSON OUTPUT
 header('data-api: https://phpapi.org/crypto/');
