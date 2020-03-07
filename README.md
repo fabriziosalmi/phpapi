@@ -4,6 +4,8 @@
 
 The aim of [PHPAPI.org](https://phpapi.org) is to provide a public, free and simple interface to get data.
 
+![Jekyll site CI](https://github.com/fabriziosalmi/phpapi/workflows/Jekyll%20site%20CI/badge.svg?branch=master)
+
 ## Features
 
 - simple and free to use
