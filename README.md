@@ -8,9 +8,7 @@ JSON response data is cached and served by Cloudflare.
 
 ## phpapi.org / [ncov2](https://phpapi.org/ncov2/)
 
-COVID19 data (confirmed, deaths, ratio).
-
-- Date parameter is required (m-d-Y format) 
+COVID19 JSON data (confirmed, deaths, ratio) via HTTP request (date parameter required, "m-d-Y" format).
 
 **Example:**
 
