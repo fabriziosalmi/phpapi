@@ -2,11 +2,23 @@
 
 ![alt text](https://raw.githubusercontent.com/fabriziosalmi/phpapi/master/phpapi.org.png "PHPAPI.org")
 
-The aim of [PHPAPI.org](https://phpapi.org) is to provide a public, free and simple interface where to get data.
+The aim of [PHPAPI.org](https://phpapi.org) is to provide a public, free and simple interface to get data.
 
-JSON response data is cached and served by Cloudflare.
+## Features
 
-## phpapi.org / [ncov2](https://phpapi.org/ncov2/)
+- No authentication needed
+- CDN cached data
+- Easy development
+
+## HTTP API
+
+- Basic API: `https://phpapi.org/<endpoint name>/api.php`
+- Basic API with param: `https://phpapi.org/<endpoint name>/api.php?<endpoint_parameter>=<endpoint_value>`
+- Basic API with params: `https://phpapi.org/<endpoint name>/api.php?<endpoint_parameter1>=<endpoint_value1>&<endpoint_parameter2>=<endpoint_value2&<endpoint_parameterN>=<endpoint_valueN>`
+
+## Projects
+
+### phpapi.org / [ncov2](https://phpapi.org/ncov2/)
 
 COVID19 JSON data (confirmed, deaths, ratio) via HTTP request (date parameter required, "m-d-Y" format).
 
