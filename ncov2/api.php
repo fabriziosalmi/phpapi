@@ -22,7 +22,7 @@ $json = array(
     "date" => $_GET["date"],
     "confirmed" => $sum,
     "deaths" => $dsum,
-    "fatality" => round($ratio, 3)
+    "ratio" => round($ratio, 3)
     );
 
 // JSON OUTPUT
