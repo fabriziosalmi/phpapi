@@ -11,10 +11,6 @@ Example for the 5th of March, 2020:
 - Browsers: [https://phpapi.org/ncov2/api.php?date=**03-05-2020**](https://phpapi.org/ncov2/api.php?date=03-05-2020)
 - PHP: `print_r(file_get_contents(https://phpapi.org/ncov2/api.php?date=03-05-2020));`
 
-```
-https://phpapi.org/ncov2/api.php?date=03-05-2020
-```
-
 **JSON Output**
 ```
 {"date":"03-05-2020","confirmed":97886,"deaths":3348,"fatality":3.42}
