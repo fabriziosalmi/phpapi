@@ -29,6 +29,7 @@ header('data-api: https://phpapi.org/crypto/');
 header('data-format: json');
 header('data-source: https://api.nomics.com');
 header('Content-Type: application/json');
+header('Content-Encoding: gzip');
 echo json_encode($json);
 
 ?>
