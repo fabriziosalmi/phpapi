@@ -21,6 +21,11 @@ $json = array(
 //	"volume" => $volume
 );
 
+// NO CACHE
+header('Cache-Control: no-cache, no-store, must-revalidate');
+header('Pragma: no-cache');
+header('Expires: 0');
+
 // JSON OUTPUT
 header('data-api: https://phpapi.org/crypto/');
 header('data-format: json');
