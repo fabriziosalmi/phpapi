@@ -8,7 +8,7 @@ $json = "";
 // input error message
 $error_message = array(
 		"error" => "input error",
-		"help" => "use https://phpapi.org/ncov2/?date=mm-dd-yyyy format
+		"help" => "use https://phpapi.org/ncov2/?date=mm-dd-yyyy format";
 		);
 
 $header_api = "header('data-api: https://phpapi.org/ncov2/');";
