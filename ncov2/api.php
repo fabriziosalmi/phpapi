@@ -2,7 +2,6 @@
 // data source: https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports
 error_reporting(E_ERROR);
 $json = "";
-$ratio=($dsum*100)/$sum;
 
 $url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/".$input_date.".csv";
 $data = file_get_contents($url);
@@ -18,6 +17,7 @@ foreach($csv as $row) {
    	}
 }
 
+$ratio=($dsum*100)/$sum;
 
 // JSON API
 $json = array(
@@ -26,8 +26,6 @@ $json = array(
     "deaths" => $dsum,
     "ratio" => round($ratio, 3)
     );
-
-unlink($temp_file);
 
 // JSON OUTPUT
 header('data-api: https://phpapi.org/ncov2/');
