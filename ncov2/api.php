@@ -11,7 +11,7 @@ $error_message = array(
 		);
 
 // get data from https://github.com/CSSEGISandData/COVID-19
-$url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/".$_GET["date"].".csv";
+$url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/".htmlspecialchars($_GET["date"]).".csv";
 $data = file_get_contents($url);
 $temp_file = uniqid(rand(), true) . '.csv';
 file_put_contents($temp_file, $data);
@@ -33,7 +33,7 @@ unlink($temp_file);
 
 // JSON API
 $json = array(
-    "date" => $_GET["date"],
+    "date" => htmlspecialchars($_GET["date"]),
     "confirmed" => $sum,
     "deaths" => $dsum,
     "ratio" => round($ratio, 3)
@@ -42,8 +42,8 @@ $json = array(
 // JSON OUTPUT
 header('data-api: https://phpapi.org/ncov2/');
 header('data-format: json');
+header('data-request: htmlspecialchars($request)');
 header('data-source: https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports');
 header('Content-Type: application/json');
 echo json_encode($json);
-var_dump($request);
 ?>
