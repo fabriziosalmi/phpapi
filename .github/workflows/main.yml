@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@v2
         
     # Deploy to production
-    - name: Test project
-      run: php -r $GITHUB_WORKSPACE/ncov2/api.php
+    - name: List project files
+      run: ls -la $GITHUB_WORKSPACE
 
     
