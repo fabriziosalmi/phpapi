@@ -6,7 +6,7 @@ Retrieve worldwide daily sum of confirmed cases, deaths and fatality rate of the
 
 ## How to use
 
-[https://phpapi.org/ncov2/php.api?date=**mm-dd-YYYY**](https://phpapi.org/ncov2/api.php?date=mm-dd-YYYY)
+[https://phpapi.org/ncov2/php.api?date=**mm-dd-yyyy**](https://phpapi.org/ncov2/api.php?date=mm-dd-YYYY)
 
 Time range: from 01-22-2020 to yesterday (required)
 
