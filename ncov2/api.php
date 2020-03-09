@@ -2,13 +2,35 @@
 // data source: https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports
 error_reporting(E_ERROR);
 
+// input filters
+$json = "";
+
+if ($_GET["date"] == ""){
+	$json = array("error" => "input error");
+	// JSON OUTPUT
+	header('data-api: https://phpapi.org/ncov2/');
+	header('data-format: json');
+	header('Content-Type: application/json');
+	echo json_encode($json);
+	exit;
+}
+
+if (!isset($_GET["date"])){
+	$json = array("error" => "input error");
+	// JSON OUTPUT
+	header('data-api: https://phpapi.org/ncov2/');
+	header('data-format: json');
+	header('Content-Type: application/json');
+	echo json_encode($json);
+	exit;
+}
+
 // date check
 $input_date = htmlspecialchars($_GET["date"]);
 $regex = "/^(((0[13578]|1[02])\-(0[1-9]|[12]\d|3[01])\-((19|[2-9]\d)\d{2}))|((0[13456789]|1[012])\-(0[1-9]|[12]\d|30)\-((19|[2-9]\d)\d{2}))|(02\-(0[1-9]|1\d|2[0-8])\-((19|[2-9]\d)\d{2}))|(02\-29\-((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/";
-$json = "";
 
 if (preg_match($regex, $input_date, $matches)){
-    $output = 1;
+    return true;
 }
 else {
     return false;
@@ -22,7 +44,7 @@ else {
 	exit;
 }
 
-
+// get data from https://github.com/CSSEGISandData/COVID-19
 $url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/".$input_date.".csv";
 $data = file_get_contents($url);
 $temp_file = uniqid(rand(), true) . '.csv';
@@ -37,6 +59,7 @@ foreach($csv as $row) {
    	}
 }
 
+// fatality
 $ratio=($dsum*100)/$sum;
 
 // clean up temp file
