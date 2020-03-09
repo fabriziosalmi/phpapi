@@ -5,27 +5,26 @@ error_reporting(E_ERROR);
 // input filters
 $json = "";
 
-if ($_GET["date"] == ""){
-	$json = array(
+// input error message
+$error_message = array(
 		"error" => "input error",
 		"help" => "use https://phpapi.org/ncov2/?date=mm-dd-yyyy format
 		);
-	// JSON OUTPUT
-	header('data-api: https://phpapi.org/ncov2/');
-	header('data-format: json');
-	header('Content-Type: application/json');
+
+$header_api = "header('data-api: https://phpapi.org/ncov2/');";
+$header_format = "header('data-format: json');"
+$header_contenttype = "header('Content-Type: application/json');";
+
+if ($_GET["date"] == ""){
+	$json = $error_message;
+	echo $header_api."\".$header_format."\n".$header_contenttype;
 	echo json_encode($json);
 	exit;
 }
 
 if (!isset($_GET["date"])){
-	$json = array(
-		"error" => "input error",
-		"help" => "use https://phpapi.org/ncov2/?date=mm-dd-yyyy format
-		);	// JSON OUTPUT
-	header('data-api: https://phpapi.org/ncov2/');
-	header('data-format: json');
-	header('Content-Type: application/json');
+	$json = $error_message;
+	echo $header_api."\".$header_format."\n".$header_contenttype;
 	echo json_encode($json);
 	exit;
 }
@@ -33,6 +32,25 @@ if (!isset($_GET["date"])){
 // check date
 $input_date = htmlspecialchars($_GET["date"]);
 if (checkdate($input_date) == false) {
+	$json = $error_message;
+	echo $header_api."\".$header_format."\n".$header_contenttype;
+	echo json_encode($json);
+	exit;
+} 
+
+$regex1 = "/\-/";
+$regex2 = "/[0-9]/";
+$regout = false;
+
+if (!preg_match(array($regex1, $regex2), $input_date, $matches)){
+	$regout = false;
+	$json = $error_message;
+	echo $header_api."\".$header_format."\n".$header_contenttype;
+	echo json_encode($json);
+	exit;
+}
+
+if ($regout1 == false){
 	$json = array(
 		"error" => "input error",
 		"help" => "use https://phpapi.org/ncov2/?date=mm-dd-yyyy format
@@ -42,16 +60,9 @@ if (checkdate($input_date) == false) {
 	header('Content-Type: application/json');
 	echo json_encode($json);
 	exit;
-} 
-
-$regex = "/^(((0[13578]|1[02])\-(0[1-9]|[12]\d|3[01])\-((19|[2-9]\d)\d{2}))|((0[13456789]|1[012])\-(0[1-9]|[12]\d|30)\-((19|[2-9]\d)\d{2}))|(02\-(0[1-9]|1\d|2[0-8])\-((19|[2-9]\d)\d{2}))|(02\-29\-((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/";
-
-if (preg_match($regex, $input_date, $matches)){
-    return true;
 }
-else {
-    return false;
-    $output = 0;
+
+if ($regout2 == false){
 	$json = array(
 		"error" => "input error",
 		"help" => "use https://phpapi.org/ncov2/?date=mm-dd-yyyy format
