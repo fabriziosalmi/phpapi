@@ -29,50 +29,28 @@ if (!isset($_GET["date"])){
 	exit;
 }
 
+$date = htmlspecialchars($_GET["date"]);
+
 // check date
-$input_date = htmlspecialchars($_GET["date"]);
-if (checkdate($input_date) == false) {
+static public function verifyDate($date, $strict = true)
+{
+    $dateTime = DateTime::createFromFormat('m/d/Y', $date);
+    if ($strict) {
+        $errors = DateTime::getLastErrors();
+        if (!empty($errors['warning_count'])) {
+            return false;
+        }
+    }
+    return $dateTime !== false;
+}
+
+if (verifyDate($date, $strict = true) == false) {
 	$json = $error_message;
 	echo $header_api."\".$header_format."\n".$header_contenttype;
 	echo json_encode($json);
 	exit;
-} 
-
-$regex1 = "/\-/";
-$regex2 = "/[0-9]/";
-$regout = false;
-
-if (!preg_match(array($regex1, $regex2), $input_date, $matches)){
-	$regout = false;
-	$json = $error_message;
-	echo $header_api."\".$header_format."\n".$header_contenttype;
-	echo json_encode($json);
-	exit;
 }
 
-if ($regout1 == false){
-	$json = array(
-		"error" => "input error",
-		"help" => "use https://phpapi.org/ncov2/?date=mm-dd-yyyy format
-		);	// JSON OUTPUT
-	header('data-api: https://phpapi.org/ncov2/');
-	header('data-format: json');
-	header('Content-Type: application/json');
-	echo json_encode($json);
-	exit;
-}
-
-if ($regout2 == false){
-	$json = array(
-		"error" => "input error",
-		"help" => "use https://phpapi.org/ncov2/?date=mm-dd-yyyy format
-		);	// JSON OUTPUT
-	header('data-api: https://phpapi.org/ncov2/');
-	header('data-format: json');
-	header('Content-Type: application/json');
-	echo json_encode($json);
-	exit;
-}
 
 // get data from https://github.com/CSSEGISandData/COVID-19
 $url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/".$input_date.".csv";
