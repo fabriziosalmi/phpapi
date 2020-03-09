@@ -30,27 +30,6 @@ if (!isset($_GET["date"])){
 
 $date = htmlspecialchars($_GET["date"]);
 
-// check date
-static public function verifyDate($date, $strict = true)
-{
-    $dateTime = DateTime::createFromFormat('m/d/Y', $date);
-    if ($strict) {
-        $errors = DateTime::getLastErrors();
-        if (!empty($errors['warning_count'])) {
-            return false;
-        }
-    }
-    return $dateTime !== false;
-}
-
-if (verifyDate($date, $strict = true) == false) {
-	$json = $error_message;
-	$header_api = "header('data-api: https://phpapi.org/ncov2/');";
-	$header_format = "header('data-format: json');"
-	$header_contenttype = "header('Content-Type: application/json');";	
-	echo json_encode($json);
-	exit;
-}
 
 // get data from https://github.com/CSSEGISandData/COVID-19
 $url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/".$input_date.".csv";
