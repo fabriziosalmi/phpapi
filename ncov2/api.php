@@ -3,7 +3,7 @@
 error_reporting(E_ERROR);
 
 // input filters
-// $input_date = htmlspecialchars($_GET["date"]);
+$input_date = htmlspecialchars($_GET["date"]);
 $json = "";
 
 // input error message
