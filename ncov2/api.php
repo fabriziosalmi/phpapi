@@ -11,21 +11,20 @@ $error_message = array(
 		"help" => "use https://phpapi.org/ncov2/?date=mm-dd-yyyy format";
 		);
 
-$header_api = "header('data-api: https://phpapi.org/ncov2/');";
-$header_format = "header('data-format: json');"
-$header_contenttype = "header('Content-Type: application/json');";
-
 if ($_GET["date"] == ""){
 	$json = $error_message;
-	echo $header_api."\".$header_format."\n".$header_contenttype;
+	$header_api = "header('data-api: https://phpapi.org/ncov2/');";
+	$header_format = "header('data-format: json');"
+	$header_contenttype = "header('Content-Type: application/json');";
 	echo json_encode($json);
 	exit;
 }
 
 if (!isset($_GET["date"])){
 	$json = $error_message;
-	echo $header_api."\".$header_format."\n".$header_contenttype;
-	echo json_encode($json);
+	$header_api = "header('data-api: https://phpapi.org/ncov2/');";
+	$header_format = "header('data-format: json');"
+	$header_contenttype = "header('Content-Type: application/json');";	echo json_encode($json);
 	exit;
 }
 
@@ -46,11 +45,12 @@ static public function verifyDate($date, $strict = true)
 
 if (verifyDate($date, $strict = true) == false) {
 	$json = $error_message;
-	echo $header_api."\".$header_format."\n".$header_contenttype;
+	$header_api = "header('data-api: https://phpapi.org/ncov2/');";
+	$header_format = "header('data-format: json');"
+	$header_contenttype = "header('Content-Type: application/json');";	
 	echo json_encode($json);
 	exit;
 }
-
 
 // get data from https://github.com/CSSEGISandData/COVID-19
 $url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/".$input_date.".csv";
