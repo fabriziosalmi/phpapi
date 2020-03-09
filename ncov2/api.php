@@ -1,33 +1,14 @@
 <?php
 // data source: https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports
 error_reporting(E_ERROR);
-
-// input filters
 $json = "";
+$request=$_GET;
 
 // input error message
 $error_message = array(
 		"error" => "input error",
-		"help" => "use https://phpapi.org/ncov2/?date=mm-dd-yyyy format";
+		"help" => "use https://phpapi.org/ncov2/?date=mm-dd-yyyy format"
 		);
-
-if ($_GET["date"] == ""){
-	$json = $error_message;
-	$header_api = "header('data-api: https://phpapi.org/ncov2/');";
-	$header_format = "header('data-format: json');"
-	$header_contenttype = "header('Content-Type: application/json');";
-	echo json_encode($json);
-	exit;
-}
-
-if (!isset($_GET["date"])){
-	$json = $error_message;
-	$header_api = "header('data-api: https://phpapi.org/ncov2/');";
-	$header_format = "header('data-format: json');";
-	$header_contenttype = "header('Content-Type: application/json');";	
-	echo json_encode($json);
-	exit;
-}
 
 // get data from https://github.com/CSSEGISandData/COVID-19
 $url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/".$_GET["date"].".csv";
@@ -64,4 +45,5 @@ header('data-format: json');
 header('data-source: https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports');
 header('Content-Type: application/json');
 echo json_encode($json);
+var_dump($request);
 ?>
