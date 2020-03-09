@@ -30,8 +30,20 @@ if (!isset($_GET["date"])){
 	exit;
 }
 
-// date check
+// check date
 $input_date = htmlspecialchars($_GET["date"]);
+if (checkdate($input_date) == false) {
+	$json = array(
+		"error" => "input error",
+		"help" => "use https://phpapi.org/ncov2/?date=mm-dd-yyyy format
+		);	// JSON OUTPUT
+	header('data-api: https://phpapi.org/ncov2/');
+	header('data-format: json');
+	header('Content-Type: application/json');
+	echo json_encode($json);
+	exit;
+} 
+
 $regex = "/^(((0[13578]|1[02])\-(0[1-9]|[12]\d|3[01])\-((19|[2-9]\d)\d{2}))|((0[13456789]|1[012])\-(0[1-9]|[12]\d|30)\-((19|[2-9]\d)\d{2}))|(02\-(0[1-9]|1\d|2[0-8])\-((19|[2-9]\d)\d{2}))|(02\-29\-((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/";
 
 if (preg_match($regex, $input_date, $matches)){
