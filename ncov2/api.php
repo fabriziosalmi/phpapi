@@ -6,7 +6,10 @@ error_reporting(E_ERROR);
 $json = "";
 
 if ($_GET["date"] == ""){
-	$json = array("error" => "input error");
+	$json = array(
+		"error" => "input error",
+		"help" => "use https://phpapi.org/ncov2/?date=mm-dd-yyyy format
+		);
 	// JSON OUTPUT
 	header('data-api: https://phpapi.org/ncov2/');
 	header('data-format: json');
@@ -16,8 +19,10 @@ if ($_GET["date"] == ""){
 }
 
 if (!isset($_GET["date"])){
-	$json = array("error" => "input error");
-	// JSON OUTPUT
+	$json = array(
+		"error" => "input error",
+		"help" => "use https://phpapi.org/ncov2/?date=mm-dd-yyyy format
+		);	// JSON OUTPUT
 	header('data-api: https://phpapi.org/ncov2/');
 	header('data-format: json');
 	header('Content-Type: application/json');
@@ -35,8 +40,10 @@ if (preg_match($regex, $input_date, $matches)){
 else {
     return false;
     $output = 0;
-	$json = array("error" => "data is not valid");
-	// JSON OUTPUT
+	$json = array(
+		"error" => "input error",
+		"help" => "use https://phpapi.org/ncov2/?date=mm-dd-yyyy format
+		);	// JSON OUTPUT
 	header('data-api: https://phpapi.org/ncov2/');
 	header('data-format: json');
 	header('Content-Type: application/json');
