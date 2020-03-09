@@ -3,6 +3,7 @@
 error_reporting(E_ERROR);
 
 // input filters
+$input_date = htmlspecialchars($_GET["date"]);
 $json = "";
 
 // input error message
@@ -11,7 +12,7 @@ $error_message = array(
 		"help" => "use https://phpapi.org/ncov2/?date=mm-dd-yyyy format";
 		);
 
-if ($_GET["date"] == ""){
+if ($input_date == ""){
 	$json = $error_message;
 	$header_api = "header('data-api: https://phpapi.org/ncov2/');";
 	$header_format = "header('data-format: json');"
@@ -27,9 +28,6 @@ if (!isset($_GET["date"])){
 	$header_contenttype = "header('Content-Type: application/json');";	echo json_encode($json);
 	exit;
 }
-
-$date = htmlspecialchars($_GET["date"]);
-
 
 // get data from https://github.com/CSSEGISandData/COVID-19
 $url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/".$input_date.".csv";
