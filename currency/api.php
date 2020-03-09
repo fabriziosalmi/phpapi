@@ -1,30 +1,6 @@
 <?php
-
-if (!isset($_GET["currency"])) {
-  $json = array(
-    "error" => "input error"
-  );
   
-  // JSON OUTPUT
-  header('data-api: https://phpapi.org/ncov2/');
-  header('data-format: json');
-  header('Content-Type: application/json');
-  echo json_encode($json);
-}
-  
-if ($_GET["currency"]) == "") {
-  $json = array(
-    "error" => "input error"
-  );
-  
-  // JSON OUTPUT
-  header('data-api: https://phpapi.org/ncov2/');
-  header('data-format: json');
-  header('Content-Type: application/json');
-  echo json_encode($json);
-}
-  
-if ($_GET["currency"] == "EUR" ) {
+if ($_GET["currency"] = "EUR" ) {
 
   $api = "https://api.ratesapi.io/api/latest";
   $data = json_decode(file_get_contents($api));
