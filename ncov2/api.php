@@ -33,7 +33,7 @@ unlink($temp_file);
 
 // JSON API
 $json = array(
-    "date" => htmlspecialchars($_GET["date"]),
+    "date" => $_GET["date"],
     "confirmed" => $sum,
     "deaths" => $dsum,
     "ratio" => round($ratio, 3)
