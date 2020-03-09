@@ -25,7 +25,7 @@ else {
 
 $url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/".$input_date.".csv";
 $data = file_get_contents($url);
-$temp_file = ("last_".$rand(11111,22222));
+$temp_file = uniqid(rand(), true) . '.csv';
 file_put_contents($temp_file, $data);
 $csv = array_map('str_getcsv', file($temp_file));
 foreach($csv as $row) {
