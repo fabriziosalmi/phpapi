@@ -33,5 +33,9 @@ jobs:
         echo test, and deploy your project.
         
     # Deploy to production
-    - name: rsync deployments
+    - name: Check project files
       run: ls -la $GITHUB_WORKSPACE
+      
+    # Deploy to production
+    - name: Check project folder
+      run: pwd
