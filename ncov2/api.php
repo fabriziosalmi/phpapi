@@ -3,7 +3,6 @@
 error_reporting(E_ERROR);
 
 // input filters
-$input_date = htmlspecialchars($_GET["date"]);
 $json = "";
 
 // input error message
@@ -31,7 +30,7 @@ if (!isset($_GET["date"])){
 }
 
 // get data from https://github.com/CSSEGISandData/COVID-19
-$url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/".$input_date.".csv";
+$url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/".$_GET["date"].".csv";
 $data = file_get_contents($url);
 $temp_file = uniqid(rand(), true) . '.csv';
 file_put_contents($temp_file, $data);
