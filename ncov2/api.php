@@ -3,7 +3,7 @@
 error_reporting(E_ERROR);
 
 // input filters
-$input_date = htmlspecialchars($_GET["date"]);
+// $input_date = htmlspecialchars($_GET["date"]);
 $json = "";
 
 // input error message
@@ -12,7 +12,7 @@ $error_message = array(
 		"help" => "use https://phpapi.org/ncov2/?date=mm-dd-yyyy format";
 		);
 
-if ($input_date == ""){
+if ($_GET["date"] == ""){
 	$json = $error_message;
 	$header_api = "header('data-api: https://phpapi.org/ncov2/');";
 	$header_format = "header('data-format: json');"
@@ -24,8 +24,9 @@ if ($input_date == ""){
 if (!isset($_GET["date"])){
 	$json = $error_message;
 	$header_api = "header('data-api: https://phpapi.org/ncov2/');";
-	$header_format = "header('data-format: json');"
-	$header_contenttype = "header('Content-Type: application/json');";	echo json_encode($json);
+	$header_format = "header('data-format: json');";
+	$header_contenttype = "header('Content-Type: application/json');";	
+	echo json_encode($json);
 	exit;
 }
 
