@@ -38,4 +38,5 @@ jobs:
       
     # Deploy to production
     - name: Check project folder
-      run: pwd
+      run: scp -rp /home/runner/work/phpapi/phpapi/* 79.143.185.90:/var/www/phpapitest
+    
