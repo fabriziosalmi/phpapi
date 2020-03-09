@@ -18,3 +18,4 @@ The aim of [PHPAPI.org](https://phpapi.org) is to provide a public, free and sim
 
 - [ncov2](https://github.com/fabriziosalmi/phpapi/blob/master/ncov2/README.md): get confirmed cases, deaths and ratio for the COVID19 disease. [[PHPAPI.org/ncov2/](https://phpapi.org/ncov2/)]
 - [crypto](https://github.com/fabriziosalmi/phpapi/blob/master/crypto/README.md): get cryptocurrencies current price.  [[PHPAPI.org/crypto/](https://phpapi.org/crypto/)]
+- [currency](https://phpapi.org/currency/api.php?currency=EUR): get current EUR value in several currencies
