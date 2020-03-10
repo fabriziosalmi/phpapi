@@ -5,7 +5,7 @@ $json = "";
 $date = $_GET["date"];
 $country = $_GET["country"];
 
-$url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/".$_GET["date"].".csv";
+$url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/".$date.".csv";
 $data = file_get_contents($url);
 $temp_file = uniqid(rand(), true) . '.csv';
 file_put_contents($temp_file, $data);
@@ -34,5 +34,4 @@ foreach ($csv as $row) {
 		echo json_encode($json);	
 	} 
 }
-
 ?>
