@@ -15,7 +15,9 @@ $csv = array_map('str_getcsv', file($temp_file));
 foreach ($csv as $row) {
 
 	if ($row[1] == $_GET["country"]) {
-		$ratio = ($row[4]*100)/$row[3]
+		
+		$ratio = ($row[4]*100)/$row[3];
+		
 	$json = array(
 		"country" => $row[1],
 		"confirmed" => $row[3],
