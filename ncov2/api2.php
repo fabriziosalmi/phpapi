@@ -19,7 +19,7 @@ foreach ($csv as $row) {
 		"country" => $row[1],
 		"confirmed" => $row[3],
 		"deaths" => $row[4],
-		"ratio" => ($row[4]*100)/$row[3]
+		"ratio" => round((($row[4]*100)/$row[3]), 3);
 	);
 
 		// JSON OUTPUT
