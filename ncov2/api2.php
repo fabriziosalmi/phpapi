@@ -16,13 +16,11 @@ foreach ($csv as $row) {
 
 	if ($row[1] == $_GET["country"]) {
 		
-		$ratio = ($row[4]*100)/$row[3];
-		
 	$json = array(
 		"country" => $row[1],
 		"confirmed" => $row[3],
 		"deaths" => $row[4],
-		"ratio" => round($ratio, 3);
+		"ratio" => $ratio = ($row[4]*100)/$row[3];;
 	);
 
 		// JSON OUTPUT
