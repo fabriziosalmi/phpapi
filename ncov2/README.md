@@ -15,7 +15,7 @@ Retrieve worldwide daily sum of confirmed cases, deaths and fatality rate of the
 
 #### Input
 
-[https://phpapi.org/ncov2/php.api?date=**03-03-2020&country=Italy**](https://phpapi.org/ncov2/api.php?date=03-05-2020&country=Italy)
+[https://phpapi.org/ncov2/php.api?date=**03-03-2020&country=Italy**](https://phpapi.org/ncov2/api.php?date=03-03-2020&country=Italy)
 
 #### Output
 
