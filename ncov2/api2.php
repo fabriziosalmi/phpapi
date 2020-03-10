@@ -2,13 +2,9 @@
 // data source: https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports
 error_reporting(E_ERROR);
 $json = "";
-
 $date = $_GET["date"];
 $country = $_GET["country"];
 
-if (isset($date)) {
-	if (isset($country)){
-	
 $url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/".$_GET["date"].".csv";
 $data = file_get_contents($url);
 $temp_file = uniqid(rand(), true) . '.csv';
@@ -34,5 +30,5 @@ foreach ($csv as $row) {
 		echo json_encode($json);	
 	} 
 }
-}
+
 ?>
