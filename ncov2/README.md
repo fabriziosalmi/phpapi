@@ -56,7 +56,7 @@ Result:
 {"date":"03-09-2020","country":"Italy","confirmed":"9172","deaths":"463","ratio":5.05}
 ```
 
-- get single value across several countries
+- get values for a given day across several countries
 
 ```
 for i in Argentina Italy Japan Spain France South%20Korea Germany; do curl -X GET -H "Content-type: application/json" -H "Accept: application/json"  "https://phpapi.org/ncov2/api.php?date=03-09-2020&country=$i"; echo ""; done
