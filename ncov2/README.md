@@ -42,7 +42,7 @@ for i in 02-19-2020 02-20-2020 02-21-2020 02-22-2020 02-23-2020 02-24-2020 02-25
 {"date":"03-02-2020","country":"Italy","confirmed":"2036","deaths":"52","ratio":2.55}
 {"date":"03-03-2020","country":"Italy","confirmed":"2502","deaths":"79","ratio":3.16}
 {"date":"03-04-2020","country":"Italy","confirmed":"3089","deaths":"107","ratio":3.46}
-{"date":"03-05-2020","country":"Italy","confirmed":97886,"deaths":3348,"ratio":3.42}
+{"date":"03-05-2020","country":"Italy","confirmed":"97886","deaths":"3348","ratio":3.42}
 {"date":"03-06-2020","country":"Italy","confirmed":"4636","deaths":"197","ratio":4.25}
 {"date":"03-07-2020","country":"Italy","confirmed":"5883","deaths":"233","ratio":3.96}
 {"date":"03-08-2020","country":"Italy","confirmed":"7375","deaths":"366","ratio":4.96}
