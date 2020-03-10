@@ -85,7 +85,5 @@ curl -X GET -H "Content-type: application/json" -H "Accept: application/json"  "
 A MISS cache status header will be served with freshest data:
 
 ```
-[...]
 cf-cache-status	MISS
-[..]
 ```
