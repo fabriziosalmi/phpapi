@@ -20,10 +20,10 @@ foreach ($csv as $row) {
 	if ($row[1] == $_GET["country"]) {
 
 	$json = array(
-		"country" => $row[1];
-		"confirmed" => $row[3];
-		"deaths" => $row[4];
-		"ratio" => ($row[4]*100)/$row[3]; 
+		"country" => $row[1],
+		"confirmed" => $row[3],
+		"deaths" => $row[4],
+		"ratio" => ($row[4]*100)/$row[3]
 	);
 
 		// JSON OUTPUT
