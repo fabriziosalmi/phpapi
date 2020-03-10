@@ -22,7 +22,7 @@ foreach ($csv as $row) {
 		"country" => $row[1],
 		"confirmed" => $row[3],
 		"deaths" => $row[4],
-		"ratio" => round($ratio, 2);
+		"ratio" => round($ratio, 2)
 	);
 
 		// JSON OUTPUT
