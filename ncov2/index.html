@@ -16,23 +16,6 @@
 <meta itemprop="name" content="ncov2 | PHPAPI.org"/>
 <meta itemprop="description" content="Retrieve worldwide daily sum of confirmed cases, deaths and fatality rate of the COVID19 disease."/>
 <meta itemprop="image" content="https://phpapi.org/favicon-32x32.png""/>
-<!-- markup for facebook -->
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="ncov2 | PHPAPI.org"/>
-<meta property="og:url" content="https://phpapi.org/ncov2/"/>
-<meta property="og:site_name" content="Exemplo"/>
-<meta property="og:image" content="https://phpapi.org/favicon-32x32.png"/>
-<meta property="og:description" content="Retrieve worldwide daily sum of confirmed cases, deaths and fatality rate of the COVID19 disease."/>
-<meta property="og:locale" content="pt_BR"/>
-<meta property="fb:app_id" content="5349"/>
-<meta property="fb:admins" content="123456789"/>
-<!-- markup for twitter -->
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="ncov2 | PHPAPI.org"/>
-<meta name="twitter:description" content="Retrieve worldwide daily sum of confirmed cases, deaths and fatality rate of the COVID19 disease."/>
-<meta name="twitter:creator" content="PHPAPI.org"/>
-<meta name="twitter:image" content="https://phpapi.org/favicon-32x32.png""/>
-<!-- JSON-LD - structured data markup Google Search -->
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -58,15 +41,15 @@
     <h2>Description</h2>
     <p>Retrieve worldwide daily sum of confirmed cases, deaths and fatality rate of the COVID19 disease (<a href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports" target="_blank">data source</a>).</p>
     <h2>How to use</h2>
-    <a href="https://phpapi.org/ncov2/api.php?date=mm-dd-YYYY">https://phpapi.org/ncov2/php.api?date=<b>mm-dd-YYYY</b></a>
+    <a href="https://phpapi.org/ncov2/api.php?date=mm-dd-yyyy&country=xxxxxx">https://phpapi.org/ncov2/php.api?date=<b>mm-dd-YYYY</b>&<b>country=xxxxxx</b></a>
     <p>
         <p>Time range: from 01-22-2020 to yesterday (required)</p>
         <h3>Example</h3>
         <h4>Input</h4>
-        <a href="https://phpapi.org/ncov2/api.php?date=03-05-2020">https://phpapi.org/ncov2/php.api?date=<b>03-05-2020</b></a>
+        <a href="https://phpapi.org/ncov2/api.php?date=03-03-2020&country=Italy">https://phpapi.org/ncov2/php.api?date=<b>03-03-2020&country=Italy</b></a>
         <p>
             <h4>Output</h4>
-            <pre>{"date": "03-05-2020","confirmed": 97886,"deaths": 3349,"fatality": 3.42}</pre>
+            <pre>{"date":"03-03-2020","country":"Italy","confirmed":"2502","deaths":"79","ratio":3.16}</pre>
 </body>
 
 </html>
