@@ -2,7 +2,7 @@
 
 ## Description
 
-Retrieve worldwide daily sum of confirmed cases, deaths and fatality rate of the COVID19 disease by country ([data source](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports)).
+Retrieve worldwide stats of the COVID19 disease ([data source](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports)).
 
 ## How to use
 
