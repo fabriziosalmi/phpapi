@@ -19,6 +19,7 @@ foreach ($csv as $row) {
 		$ratio = ($row[4]*100)/$row[3];
 		
 	$json = array(
+		"date" => $date,
 		"country" => $row[1],
 		"confirmed" => $row[3],
 		"deaths" => $row[4],
