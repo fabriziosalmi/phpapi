@@ -23,9 +23,9 @@ Retrieve worldwide stats of the COVID19 disease ([data source](https://github.co
 
 #### Get multiple data
 
-Iteration using OSX, bash and curl
+In the examples below you can find some iterations (I'm using bash and curl under OSX)
 
-- get historical data for a given country
+1. Get historical data for a given country
 
 ```
 for i in 02-19-2020 02-20-2020 02-21-2020 02-22-2020 02-23-2020 02-24-2020 02-25-2020 02-26-2020 02-27-2020 02-28-2020 02-29-2020 03-01-2020 03-02-2020 03-03-2020 03-04-2020 03-05-2020 03-06-2020 03-07-2020 03-08-2020 03-09-2020; do curl -X GET -H "Content-type: application/json" -H "Accept: application/json"  "https://phpapi.org/ncov2/api.php?date=$i&country=Italy"; echo ""; done
@@ -56,7 +56,7 @@ Result:
 {"date":"03-09-2020","country":"Italy","confirmed":"9172","deaths":"463","ratio":5.05}
 ```
 
-- get values for a given day across several countries
+2. Get data for a given day and multiple countries
 
 ```
 for i in Argentina Italy Japan Spain France South%20Korea Germany; do curl -X GET -H "Content-type: application/json" -H "Accept: application/json"  "https://phpapi.org/ncov2/api.php?date=03-09-2020&country=$i"; echo ""; done
@@ -74,7 +74,7 @@ Result:
 {"date":"03-09-2020","country":"Germany","confirmed":"1176","deaths":"2","ratio":0.17}
 ```
 
-- bypass cache
+3. How to bypass cache
 
 Use **&salt=\<a random string here\>** like in the example below:
 
@@ -82,7 +82,7 @@ Use **&salt=\<a random string here\>** like in the example below:
 curl -X GET -H "Content-type: application/json" -H "Accept: application/json"  "https://phpapi.org/ncov2/api.php?date=02-05-2020&country=Italy&salt=32141"
 ```
 
-You should expect a MISS cache status header (if you get HIT change random string)
+A MISS cache status header will be served with freshest data:
 
 ```
 [...]
