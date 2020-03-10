@@ -11,15 +11,18 @@ $temp_file = uniqid(rand(), true) . '.csv';
 file_put_contents($temp_file, $data);
 $csv = array_map('str_getcsv', file($temp_file));
 
+
 foreach ($csv as $row) {
 
 	if ($row[1] == $_GET["country"]) {
-
+		
+		$ratio = ($row[4]*100)/$row[3];
+		
 	$json = array(
 		"country" => $row[1],
 		"confirmed" => $row[3],
 		"deaths" => $row[4],
-		"ratio" => round((($row[4]*100)/$row[3]), 3);
+		"ratio" => round($ratio, 3);
 	);
 
 		// JSON OUTPUT
