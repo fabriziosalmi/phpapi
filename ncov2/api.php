@@ -21,8 +21,8 @@ foreach ($csv as $row) {
 	$json = array(
 		"date" => $date,
 		"country" => $row[1],
-		"confirmed" => $row[3],
-		"deaths" => $row[4],
+		"confirmed" => round($row[3], 0),
+		"deaths" => round($row[4], 0),
 		"ratio" => round($ratio, 2)
 	);
 
